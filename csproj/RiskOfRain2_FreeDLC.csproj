@@ -13,6 +13,8 @@
            Text="Set GameManagedPath to the current game's Risk of Rain 2_Data/Managed directory." />
     <Error Condition="!Exists('$(BepInExCorePath)/BepInEx.dll')"
            Text="Set BepInExCorePath to a BepInEx 5 core directory." />
+    <Error Condition="!Exists('$(BepInExCorePath)/MonoMod.RuntimeDetour.dll')"
+           Text="BepInExCorePath must include the bundled MonoMod.RuntimeDetour.dll." />
   </Target>
 
   <ItemGroup>
@@ -22,6 +24,7 @@
     <Reference Include="com.unity.multiplayer-hlapi.Runtime" HintPath="$(GameManagedPath)/com.unity.multiplayer-hlapi.Runtime.dll" Private="false" />
     <Reference Include="UnityEngine.UNETModule" HintPath="$(GameManagedPath)/UnityEngine.UNETModule.dll" Private="false" />
     <Reference Include="BepInEx" HintPath="$(BepInExCorePath)/BepInEx.dll" Private="false" />
+    <Reference Include="MonoMod.RuntimeDetour" HintPath="$(BepInExCorePath)/MonoMod.RuntimeDetour.dll" Private="false" />
   </ItemGroup>
 
   <Target Name="PackageMod" AfterTargets="Build" Condition="'$(Configuration)' == 'Release'">

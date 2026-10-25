@@ -12,3 +12,15 @@ This is a mod that unlocks all and future DLCs of Risk of Rain 2.
 
 ## Usage
 Local install the .zip file under releases.
+
+## Multiplayer
+
+The client reports expansion entitlements through the standard game authentication message.
+This lets a vanilla host recognize the client DLC access without this mod on the host.
+The existing local and host entitlement resolvers remain active for modded sessions.
+
+The host still controls expansion rules. Survivor unlock requirements still apply.
+Other players retain their own DLC access unless the host also runs this mod.
+Other mods must satisfy their normal multiplayer compatibility requirements.
+
+Live multiplayer verification remains pending. The regression harness covers entitlement reporting and plugin lifecycle events.
